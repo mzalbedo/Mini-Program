@@ -1,0 +1,14 @@
+<view class="list" bindtap="toDetail" >
+  <view class="item">
+    <view class="image">
+      <image src="../../images/icon/user.png" />
+    </view>
+    <view class="content">
+      <text class="h1">用户：{{users.user_name}}</text>
+      <text class="p"></text>
+      <text class="p myp">用户电话：{{users.tel}}</text>
+      <text class="p"></text>
+      <text class="p myp">用户等级：{{users.admin}}</text>
+    </view>
+  </view>
+</view>

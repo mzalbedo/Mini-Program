@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "m-swiper": "/components/sort/index",
+    "m-display": "/components/hot/index"
+  }
+}

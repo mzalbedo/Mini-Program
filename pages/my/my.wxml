@@ -1,0 +1,48 @@
+<view class='container1'>
+  <view class='user' bind:tap="onAdmin">
+    <view class='user-img'>
+      <m-button wx:if="{{!authorized}}" open-type="getUserInfo" class="avatar-position" catch:getuserinfo="onGetUserInfo">
+        <image slot="img" class="avatar" src="/images/my/my.png" />
+      </m-button>
+      <view wx:if="{{authorized}}" catch:tap="onAbout" class="avatar-container avatar-position">
+        <image src="{{userInfo.avatarUrl}}" class="avatar" />
+      </view>
+    </view>
+    <view class='information'>
+      <text class='t1'>{{userInfo.nickName}}</text>
+      <text class='t2'>{{admin}}</text>
+    </view>
+  </view>
+  <view class='select'>
+    <view class="mod-a mt20" bind:tap="onPost">
+      <view class="mod my-nick">
+        <text>物品发布</text>
+        <image class="arrow-r" src="../../images/my/arrow-r-0.png"></image>
+      </view>
+    </view>
+    <view class="mod-a mt20" bind:tap="onLike">
+      <view class="mod my-nick">
+        <text>收藏物品</text>
+        <image class="arrow-r" src="../../images/my/arrow-r-0.png"></image>
+      </view>
+    </view>
+    <view class="mod-a mt20" bind:tap="onGoods">
+      <view class="mod">
+        <text>我的物品</text>
+        <image class="arrow-r" src="../../images/my/arrow-r-0.png"></image>
+      </view>
+    </view>
+    <view class="mod-a mt20" bind:tap="onDeal">
+      <view class="mod">
+        <text>正在交易</text>
+        <image class="arrow-r" src="../../images/my/arrow-r-0.png"></image>
+      </view>
+    </view>
+    <view class="mod-a mt20" bind:tap="onRecord">
+      <view class="mod">
+        <text>交易记录</text>
+        <image class="arrow-r" src="../../images/my/arrow-r-0.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

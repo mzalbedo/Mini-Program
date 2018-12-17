@@ -1,0 +1,9 @@
+<view class="container">
+  <view>
+    <image class="item-image" mode="aspectFill" src="{{goods.image_id}}" bindtap="tappedImage" data-id="{{item.useridx}}"></image>
+    <view class="description">
+      <text class='title'>商品名称：{{goods.goods_name}}</text>
+      <text class='author'>¥{{goods.price}}</text>
+    </view>
+  </view>
+</view>

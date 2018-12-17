@@ -1,0 +1,24 @@
+<view class='admin'>
+  <view class='top'>
+    <text wx:if="{{admin}}" bindtap='onuser' class="{{show==1 ? 'text' : '' }}">用户</text>
+    <text bindtap='onadd' class="{{show==2 ? 'text' : '' }}">已上架</text>
+    <text bindtap='onaudit' class="{{show==3 ? 'text' : '' }}">待审核</text>
+  </view>
+  <view class='content'>
+    <view wx:if="{{show==1 && admin}}" class='user'>
+      <view wx:for="{{users}}" wx:key="">
+        <m-users users="{{item}}" />
+      </view>
+    </view>
+    <view wx:if="{{show==2}}" class='goods'>
+      <view wx:for="{{my_goods}}" wx:key="">
+        <m-goods goods="{{item}}" />
+      </view>
+    </view>
+    <view wx:if="{{show==3}}" class='goods'>
+      <view wx:for="{{my_goods}}" wx:key="">
+        <m-admin goods="{{item}}" />
+      </view>
+    </view>
+  </view>
+</view>

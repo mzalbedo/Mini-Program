@@ -1,0 +1,3 @@
+<view wx:for="{{my_goods}}" wx:key="">
+  <m-goods goods="{{item}}" />
+</view>

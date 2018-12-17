@@ -1,0 +1,6 @@
+<view wx:if="{{my_goods}}" wx:for="{{my_goods}}" wx:key="">
+  <m-goods goods="{{item}}" />
+</view>
+<view wx:if="{{!my_goods}}">
+  <text class='text'>无正在交易物品！</text>
+</view>

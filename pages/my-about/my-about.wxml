@@ -1,0 +1,59 @@
+<!-- 新建任务 -->
+<view wx:if="{{show}}" class="add-page">
+  <!-- 我的昵称 -->
+  <view class="mod-a mt20">
+    <view class="mod ">
+      <text>我的昵称</text>
+      <text>{{userInfo.nickName}}</text>
+    </view>
+  </view>
+  <view class="mod-a mt20">
+    <!-- 任务名称 -->
+    <view class="mod t-name">
+      <text class="key">联系电话</text>
+      <input bindinput="bindKeyInput" class="input" maxlength="100" placeholder="{{tel?tel:'请输入电话'}}" />
+      <!-- <input wx:else bindinput="bindKeyInput" class="input" maxlength="100" placeholder="{{tel}}" /> -->
+      <image class="arrow-r" src="../../images/my/arrow-r-0.png"></image>
+    </view>
+  </view>
+  <view class="mod-a mt20">
+    <!-- 任务地点 -->
+    <view class="mod t-address" bindtap="chooseLocation">
+      <text class="key">你的位置</text>
+      <text wx:if="{{address1}}" class="value">{{address1}}</text>
+      <text wx:else class="value">请点击定位</text>
+      <image class="arrow-r" src="../../images/my/arrow-r-0.png"></image>
+    </view>
+  </view>
+  <view class="mod-a mt20">
+    <view class="mod t-address">
+      <text class="key">详情地点</text>
+      <input bindinput="bindKeyInput2" class="value" maxlength="100" placeholder="{{address2?address2:'请输入详细地址'}}" />
+      <!-- <input wx:else bindinput="bindKeyInput" class="input" maxlength="100" placeholder="{{address2}}" /> -->
+      <image class="arrow-r" src="../../images/my/arrow-r-0.png"></image>
+    </view>
+  </view>
+
+  <view class="mod-a mt20">
+    <view class="mod ">
+      <text>注册时间</text>
+      <text>{{create_time?create_time:'用户暂未注册'}}</text>
+    </view>
+  </view>
+
+  <view class="mod-a mt20">
+    <view class="mod ">
+      <text>更新时间</text>
+      <text>{{up_time?up_time:'用户暂未注册'}}</text>
+    </view>
+  </view>
+
+  <!-- 创建按钮 -->
+  <view class="create">
+    <button class="btn {{creating ? 'disabled' : ''}}" bindtap="bindSubmit">{{buttontext}}</button>
+  </view>
+  <!-- 提示信息 -->
+  <modal confirm-text="确定" no-confirm no-cancel hidden="{{modalHidden}}" mask bindconfirm="modalChange">
+    请完善新建任务信息
+  </modal>
+</view>

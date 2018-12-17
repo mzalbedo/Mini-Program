@@ -1,0 +1,19 @@
+.admin{
+  display: flex;
+  flex-direction: column;
+}
+
+.top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100rpx;
+  background-color: rgb(194, 194, 194);
+  align-items: center;
+  font-size: 42rpx;
+  color: rgb(126, 126, 126)
+}
+
+.top .text{
+  color: black;
+}

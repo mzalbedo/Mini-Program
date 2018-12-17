@@ -1,0 +1,24 @@
+<!-- List Item begin -->
+  <view class="content-list">
+    <navigator class="item">
+      <view class="top">
+        <!-- <view class="cover-img"> -->
+          <image class="cover-img" src='{{goods.image_id}}'  bindtap="tappedImage" />
+        <!-- </view> -->
+      </view>
+      <view class="info">
+        <view class="title">{{goods.goods_name}}</view>
+        <view class="meta clearfix"> 
+          <view class="cell left">
+            <view class="bilibili-index-sprite bilibili-index-danmu"></view>
+            <text>{{goods.goods_detail}}</text>
+          </view>
+          <view class="cell left">
+            <view class="bilibili-index-sprite bilibili-index-play"></view>
+            <text class='price'>￥{{goods.price}}</text>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <!-- List Item end -->

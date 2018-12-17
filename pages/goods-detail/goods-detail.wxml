@@ -1,0 +1,80 @@
+<view class='container1'>
+  <view class="head">
+    <image src='{{goods.image_id}}' bindtap='onimage'></image>
+    <text class='title'>{{goods.goods_name}}</text>
+    <text class='author'>￥{{goods.price}}</text>
+  </view>
+
+  <view class='sub-container'>
+    <text class='headline'>物品简介</text>
+    <text class='content' decode='true'>{{goods.goods_detail}}</text>
+  </view>
+
+
+  <view class='sub-container'>
+    <text class='headline'>短评</text>
+    <text class='shadow' wx:if="{{comments==false}}">还没有短评</text>
+    <view class='comment-container'>
+      <block wx:for="{{comments}}" wx:key="content">
+        <m-tag tag-class="{{tool.highlight(index)}}" text="{{item.content}}">
+        </m-tag>
+      </block>
+    </view>
+  </view>
+
+
+  <view class="sub-container">
+    <text class="headline">出售人信息</text>
+    <view class="detail-container">
+      <view class="vertical description">
+        <text>昵称</text>
+        <text>电话</text>
+        <text>位置</text>
+        <text>住址</text>
+        <text>注册日期</text>
+      </view>
+      <view class="vertical">
+        <text>{{user.user_name}}</text>
+        <text>{{user.tel}}</text>
+        <text>{{user.address1}}</text>
+        <text>{{user.address2}}</text>
+        <text>{{user.create_time}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 短评触发器 -->
+<view class='post-container' wx:if="{{!posting}}">
+  <view wx:if="{{!show}}" bind:tap="onFakePost" class='post-fake'>
+    <text>输入短评</text>
+  </view>
+  <view wx:if="{{show}}" class='post-fake alter' bindtap='onalter'>
+    <text>修 改 物 品</text>
+  </view>
+  
+  <view wx:if="{{!show && !admin}}"> 
+    <image class='show' src='../../images/icon/buy.png' bindtap='onbuy' />
+    <image class='show' src='../../images/icon/phone.png' bindtap='oncall' />
+  </view>
+  <view wx:if="{{show && !admin}}" bindtap='ondelete'>
+    <image class='show' src='../../images/icon/hsz.png' />
+  </view>
+  <view wx:if="{{admin}}">
+    <image class='show' src='../../images/icon/buy.png' bindtap='onbuy' />
+    <image class='show'  bindtap='ondelete' src='../../images/icon/hsz.png' />
+    <image class='show'  bindtap='oncall' src='../../images/icon/phone.png' />
+  </view>
+  <view>
+    <m-like bind:like="onLike" class="like" like="{{likeStatus}}" />
+  </view>
+</view>
+<!-- 真正的短评 -->
+<view class="posting-container" wx:if="{{posting}}">
+  <view class="post-header">
+    <text>评价</text>
+    <text bind:tap="onCancel" class="cancel">取消</text>
+  </view>
+  <input bindconfirm="onPost" class="post" placeholder='请输入物品评价'></input>
+  <!-- bindconfirm 当用点击键盘上的完成按键触发 -->
+</view>
+<m-mask wx:if="{{posting}}" />

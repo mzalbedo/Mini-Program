@@ -1,0 +1,7 @@
+<view bind:tap="onTap" class="container tag-class">
+  <slot name="before"></slot>
+  <text>{{text}}</text>
+  <slot name="after"></slot>
+  <!-- slot 插槽 -->
+</view>
+<!-- container普通样式、  tag-class外部样式  后面的样式不一定能成功覆盖前面的样式 -->

@@ -1,0 +1,83 @@
+.container1 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30rpx;
+}
+
+.user{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border: 1px solid #f0f0f0;
+}
+
+.user-img{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.information{
+  display: flex;
+  flex-direction: column;
+  padding-top:35rpx;
+}
+
+.avatar-position {
+    position: absolute;
+    margin-top: 35rpx;
+    margin-left: 30rpx;
+}
+
+.my-img {
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.avatar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar {
+    width: 120rpx;
+    height: 120rpx;
+    /* 下面两个组合在一起使头像变成圆形 */
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.t1{
+  font-size: 20px
+}
+
+.t2{
+  margin-top: 10rpx;
+  font-size: 15px;
+  color: rgba(92, 92, 92, 0.87)
+}
+
+.mod-a{
+  padding: 0 20rpx;
+  border: 1px solid #f0f0f0;
+  background-color: #fff;
+}
+
+.mod{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 90rpx;
+  padding: 0 20rpx;
+}
+
+.mt20{
+  margin-top: 20rpx;
+}
+
+.arrow-r{
+  width: 9rpx;
+  height: 17rpx;
+  margin-left: 10rpx;
+}

@@ -1,0 +1,14 @@
+<view class="list" bindtap="onadmin" >
+  <view class="item">
+    <view class="image">
+      <image src="{{goods.image_id}}" />
+    </view>
+    <view class="content">
+      <text class="h1">商品名称：{{goods.goods_name}}</text>
+      <text class="p"></text>
+      <text class="p myp">商品价格：¥{{goods.price}}</text>
+      <text class="p"></text>
+      <text class="h1">上架时间：{{goods.goods_create}}</text>
+    </view>
+  </view>
+</view>

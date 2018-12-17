@@ -1,0 +1,5 @@
+<view class="content-wrapper">
+  <block wx:for="{{goods}}" wx:key="">
+    <m-display goods="{{item}}" />
+  </block>
+</view>

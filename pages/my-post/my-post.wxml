@@ -1,0 +1,81 @@
+<!-- 新建任务 -->
+<view class="add-page">
+
+  <!-- 我的昵称 -->
+  <view class="mod-a mt20">
+    <view class="mod my-nick">
+      <text>我的昵称</text>
+      <text>{{userInfo.nickName}}</text>
+    </view>
+  </view>
+
+  <view class="mod-a">
+    <!-- 物品名称 -->
+    <view class="mod t-name">
+      <text class="key">物品名称</text>
+      <input bindinput="ongoods_name" class="input" maxlength="100" placeholder="{{task.goods_name?task.goods_name:'请输入物品名称'}}" />
+      <image class="arrow-r" src="../../images/my/arrow-r-0.png"></image>
+    </view>
+    <!-- 物品介绍-->
+    <view class="mod t-name">
+      <text class="key">物品介绍</text>
+      <input bindinput="ongoods_detail" class="input" maxlength="100" placeholder="{{task.goods_detail?task.goods_detail:'请输入物品介绍'}}" />
+      <image class="arrow-r" src="../../images/my/arrow-r-0.png"></image>
+    </view>
+    <!-- 物品类别-->
+    <view class="mod t-name">
+      <text class="key">物品类别</text>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+        <view class="input">
+          {{array[index]}}
+        </view>
+      </picker>
+      <!-- <input bindinput="ongoods_sort" class="input" maxlength="100" placeholder="请选择物品类别" /> -->
+      <image class="arrow-r" src="../../images/my/arrow-r-0.png"></image>
+    </view>
+
+    <!-- 添加价格 -->
+    <view class="mod t-name">
+      <text class="key">物品价格</text>
+      <input bindinput="ongoods_price" class="input" maxlength="100" placeholder="{{task.price?task.price:'请输入物品价格'}}" />
+      <image class="arrow-r" src="../../images/my/arrow-r-0.png"></image>
+    </view>
+  </view>
+
+  <view class="mod-a mt20">
+    <view class="mod t-early">
+      <text class="key">上传照片</text>
+      <text class="value" bindtap='ongoods_img'>点击上传图片</text>
+    </view>
+    <image class='img' wx:if="{{img_url}}" src='{{img_url}}'></image>
+  </view>
+
+  <view class="mod-a mt20">
+    <!-- 起始时间 -->
+    <view class="mod t-time">
+      <view class="start">
+        <text class="key">开始于</text>
+        <!-- <picker mode="date" value="{{task.goods_create}}" start="{{task.goods_create}}" bindchange="startDateChange"> -->
+          <view class="date">{{task.goods_create}}
+            <image class="arrow-d" src="../..//images/my/arrow-d-0.png"></image>
+          </view>
+        <!-- </picker> -->
+      </view>
+      <view class="pipe"></view>
+      <view class="end">
+        <view class="date">禁止上传非法物品</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 创建按钮 -->
+  <view class="create">
+    <button class="btn {{creating ? 'disabled' : ''}}" bindtap="bindSubmit">{{button.txt}}</button>
+  </view>
+
+  <modal confirm-text="确定" no-confirm no-cancel hidden="{{hidden1}}" mask bindconfirm="modalChange">
+    请完善任务信息
+  </modal>
+
+
+</view>

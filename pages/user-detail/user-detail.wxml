@@ -1,0 +1,30 @@
+<view class="user-head">
+  <view class="center" bindtap="userdata">
+    <view class="user-img">
+      <image src="/images/icon/user.png" />
+    </view>
+    <view class="user-text">
+      <text class="text">{{user.user_name}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="list">
+  <view class="item" bindtap="order">
+    用户电话：
+    <text class="jump">{{user.tel}}</text>
+  </view>
+  <view class="item" bindtap="address">
+    用户地址：
+    <text class="jump">{{user.address1}}</text>
+  </view>
+  <view wx:if="{{admin}}" class="item" bindtap="address1">
+    用户等级：
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="mz">
+        {{array[index]}}
+      </view>
+    </picker>
+
+  </view>
+</view>

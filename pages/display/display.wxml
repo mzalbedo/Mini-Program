@@ -1,0 +1,19 @@
+<view wx:if="{{!searching}}" class="container1">
+<text>123</text>
+  <view class="header">
+    <view class="box" bind:tap="onSearchi">
+      <image src="/images/icon/search.png" />
+      <text>搜索书籍</text>
+    </view>
+  </view>
+  <view class="sub-container">
+    <image class="head-img" src="/images/goods/quality.png" />
+    <view class='display-container'>
+      <block wx:key="id" wx:for="{{goods}}">
+        <m-goods goods="{{item}}" />
+      </block>
+    </view>
+  </view>
+</view>
+
+<m-search more="{{more}}" bind:cancel="cancel" wx:if="{{searching}}" />

@@ -1,0 +1,35 @@
+<m-swiper />
+<!-- 热门分类
+  <view class='separator'></view>
+  <view class='floortitle'>
+    <view class='floortitlemoreicon'>商品分类</view>
+    <view class='floortitlemoretext'>更多> </view>
+  </view>
+  <view class='hotgoodcontainer'>
+    <view class='gooditem' wx:for="{{hotgoods}}" wx:for-index="bindex" wx:for-item="good" wx:key='mz'>
+      <view class='imgview'>
+        <image class='productimg' src='{{good.pic_url}}' data-bindex='{{bindex}}'  bind:tap="onSort"/>
+      </view>
+      <view>{{good.name}}</view>
+    </view>
+ </view> -->
+
+
+<!-- 热门推荐 begin -->
+<view class="row-container">
+  <navigator class="header">
+    <view class="left">
+      <view class="bilibili-index-sprite bilibili-index-hot"></view>
+      <text>热门推荐</text>
+    </view>
+    <view class="right hot">
+      <view class="bilibili-index-sprite bilibili-index-ranking"></view>
+      <text>排行榜</text>
+    </view>
+  </navigator>
+  <view class="content-wrapper">
+    <block wx:for="{{goods}}" wx:key="" >
+      <m-display goods="{{item}}" />
+    </block>
+  </view>
+</view>

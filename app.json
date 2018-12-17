@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/display/display",
+    "pages/my/my",
+    "pages/goods-detail/goods-detail",
+    "pages/my-about/my-about",
+    "pages/my-deal/my-deal",
+    "pages/my-goods/my-goods",
+    "pages/my-like/my-like",
+    "pages/my-post/my-post",
+    "pages/my-record/my-record",
+    "pages/administrator/administrator",
+    "pages/sort/sort",
+    "pages/user-detail/user-detail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "MZ-Dawn",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false,
+    "navigationStyle": "default"
+  },
+  "tabBar": {
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "color": "#c7c7c7",
+    "list": [
+      {
+        "selectedIconPath": "/images/tab/classic@highlight.png",
+        "iconPath": "/images/tab/classic.png",
+        "pagePath": "pages/home/home",
+        "text": "主页"
+      },
+      {
+        "selectedIconPath": "/images/tab/book@highlight.png",
+        "iconPath": "/images/tab/book.png",
+        "pagePath": "pages/display/display",
+        "text": "微淘"
+      },
+      {
+        "selectedIconPath": "/images/tab/my@highlight.png",
+        "iconPath": "/images/tab/my.png",
+        "pagePath": "pages/my/my",
+        "text": "个人"
+      }
+    ]
+  }
+}

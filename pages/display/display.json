@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "m-search": "/components/search/index",
+    "m-goods": "/components/goods/index"
+  }
+}
